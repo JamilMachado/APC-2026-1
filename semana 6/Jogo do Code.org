@@ -1,0 +1,108 @@
+// Create your variables here
+var player;
+var item;
+var enemy;
+var bullets;
+var score = 0;
+var bg;
+
+// Create your sprites here
+bg = createSprite(200, 200);
+bg.setAnimation("bg");
+bg.scale = 1.2;
+
+player = createSprite(200, 350, 50, 50);
+player.setAnimation("player");
+player.scale = 0.5;
+
+item = createSprite(randomNumber(50, 350), 0, 30, 30);
+item.setAnimation("item");
+item.scale = 0.3;
+
+// inimigo
+enemy = createSprite(randomNumber(50, 350), 0, 40, 40);
+enemy.setAnimation("enemy");
+enemy.scale = 0.2;
+
+// grupo de balas
+bullets = new Group();
+
+function draw() {
+  // draw background
+  background("white");
+
+  // movimentação do jogador
+  if (keyDown("left")) {
+    player.x = player.x - 5;
+  }
+  if (keyDown("right")) {
+    player.x = player.x + 5;
+  }
+
+  // atirar (tecla espaço)
+  if (keyWentDown("space")) {
+    var bullet = createSprite(player.x, player.y - 20, 5, 10);
+    bullet.shapeColor = "yellow";
+    bullet.velocityY = -8;
+    bullets.add(bullet);
+  }
+
+  // movimento do item
+  item.y = item.y + 4;
+
+  // movimento do inimigo
+  enemy.y = enemy.y + 6;
+
+  // colisão com item (ganha ponto)
+  if (player.isTouching(item)) {
+    score = score + 1;
+    item.y = 0;
+    item.x = randomNumber(50, 350);
+  }
+
+  // colisão com inimigo (perde ponto)
+  if (player.isTouching(enemy)) {
+    score = score - 1;
+    enemy.y = 0;
+    enemy.x = randomNumber(50, 350);
+  }
+
+  // bala atinge inimigo (ganha ponto extra)
+  for (var i = 0; i < bullets.length; i++) {
+    if (bullets[i].isTouching(enemy)) {
+      score = score + 2;
+      enemy.y = 0;
+      enemy.x = randomNumber(50, 350);
+      bullets[i].remove(); // remove bala
+    }
+  }
+
+  // remover balas que saem da tela
+  for (var j = 0; j < bullets.length; j++) {
+    if (bullets[j].y < 0) {
+      bullets[j].remove();
+    }
+  }
+
+  // reposiciona item
+  if (item.y > 400) {
+    item.y = 0;
+    item.x = randomNumber(50, 350);
+  }
+
+  // reposiciona inimigo
+  if (enemy.y > 400) {
+    enemy.y = 0;
+    enemy.x = randomNumber(50, 350);
+  }
+
+  // update sprites
+  drawSprites();
+
+  // UI
+  fill("yellow");
+  textSize(20);
+  text("Pontuação: " + score, 10, 20);
+}
+
+// Create your functions here
