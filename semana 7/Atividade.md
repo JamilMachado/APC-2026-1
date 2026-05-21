@@ -18,7 +18,7 @@ int main(void) {
 }
 O que observar: o frame de main na stack; o valor de retorno 0 ao final.
 
-<span style="color:#008000">O QUE FOI FEITO: Comando foi copiado no python tutor, observou-se que o comando printf reproduz no output o que foi digitado</span>
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor, observou-se que o comando printf reproduz no output o que foi digitado
 
 2. Tipos primitivos e tamanhos
 TipoTamanho típicoExemplo literalchar1 byte'A', '\n'int4 bytes42, -7long4–8 bytes100000Lfloat4 bytes3.14fdouble8 bytes3.14159_Bool1 byte0 / 1
@@ -36,6 +36,8 @@ int main(void) {
 }
 O que observar: os valores impressos confirmam a tabela acima.
 Tente mudar sizeof(int) para sizeof(short) e compare.
+
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor, observou-se que foi informado o valor de bytes utilizados em cada linha, ao substituir int por short verificou que o valor mudou de 4 para 2 no output.
 
 3. Declaração e inicialização
 cint x;           // declaração (valor indefinido!)
@@ -58,6 +60,9 @@ int main(void) {
 }
 O que observar: o valor de a aparece imediatamente no frame; b só recebe valor
 após a atribuição. Tente descomentar N = 200 e veja o erro.
+
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor, observou-se que imprimiu os valores a = 42, b = 50 (resultado de a+8) e N = 100, 
+ao descomentar o N = 200 retornou o erro "error: assignment of read-only variable 'N'" que significa que não pode atribuir 2 valores para N.
 
 4. Operadores
 Aritméticos:   +  -  *  /  %
@@ -89,6 +94,8 @@ int main(void) {
 O que observar: diferença entre pré e pós-incremento no valor retornado; resultado
 da divisão inteira vs. real.
 
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor observou-se a aplicação dos operadores nos numeros estabelecidos.
+
 5. Controle de fluxo
 cif (x > 0) { ... } else if (x == 0) { ... } else { ... }
 
@@ -113,6 +120,9 @@ int main(void) {
 Variação: troque nota por 55, 80 e 95; execute cada versão e acompanhe qual
 ramo é percorrido.
 
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor observou-se que foi impresso "C" visto que o numero é maior igual 70 sendo menor que 90 e 80, 
+ao substituir pelos numeros indicados passa a imprimir "A" visto que 72 é maior igual a 55 e menor que 80 e 95.
+
 🔬 Exercício 5b — for com break e continue
 c#include <stdio.h>
 
@@ -127,6 +137,9 @@ int main(void) {
 O que observar: o valor de i no frame a cada passo; quando continue pula a
 impressão e quando break encerra o laço.
 
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor observou-se que iniciou a contagem em 1 somando 2 e retornou 3 depois mais 2 retonando 5, 
+o laço encerra pois foi estabelecido que se for igual a 7 vai para break.
+
 🔬 Exercício 5c — do-while
 c#include <stdio.h>
 
@@ -140,6 +153,8 @@ int main(void) {
 }
 O que observar: o corpo executa antes do teste; n dobra a cada iteração
 (potências de 2).
+
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor observou-se que foi iniciado a contagem em 1 e é multiplicado por 2 e enquanto o valor não for inferior a 32 o laço não é encerrado.
 
 🔬 Exercício 5d — switch com fall-through
 c#include <stdio.h>
@@ -161,6 +176,9 @@ int main(void) {
 }
 O que observar: o fall-through intencional agrupa casos; remova um break para
 ver o comportamento inesperado.
+
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor observou-se que foi definido que se tiver os numeros de 1 à 5 vai se impresso "Dia util", se tiver os numeros 6 e 7 vai imprimir 
+"Fim de semana" e qualquer outro numero diferente vai imprimir "Invalido", como foi estabelecido o numero 3 foi impresso "Dia util".
 
 6. Funções
 cint soma(int a, int b);          // protótipo
@@ -192,6 +210,8 @@ int main(void) {
 }
 O que observar: os frames de fatorial empilhando e desempilhando; como dobra
 modifica v via ponteiro — o frame de dobra mostra x apontando para v em main.
+
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor observou-se que 
 
 7. Arrays
 cint v[5];                         // 5 ints (índices 0–4)
