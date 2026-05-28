@@ -2,7 +2,7 @@
 print("Ola, mundo!")
 O que observar: o PythonTutor mostra um único frame Global — não há main. Todo código de módulo vive no escopo global.
 
-
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor, observou-se que a frase "Ola, mundo!" foi gerada.
 
 2. Tipos e o modelo de objetos
 Em C: tipos são atributos da variável e têm tamanho fixo em bytes.
@@ -28,6 +28,7 @@ n = None        # equivale ao NULL/void de C
 print(type(x))  # <class 'int'>
 print(type(f))  # <class 'float'>
 print(type(b))  # <class 'bool'>
+
 🔬 Exercício 2 — Tipos dinâmicos e identidade de objeto
 x = 42
 print(type(x))      # <class 'int'>
@@ -41,6 +42,10 @@ b = 1000
 print(a == b)       # True  — mesmo valor
 print(a is b)       # pode ser False — objetos diferentes no heap
 O que observar: x muda de tipo porque a etiqueta foi colada em outro objeto — não porque a "caixa" foi reformatada. id() mostra o endereço real no heap (equivalente a %p no printf de C).
+
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor, observou-se que primeiro se atribuiu a variavel x o numero 42 em seguida pediu para informa o type de x que retornou "class 'int'" em seguida pediu 
+para informar o id de x que retornou 140473958604296, em seguida foi dado outra atribuição para x que virou a frase "agora sou str" e pediu para informa o type de X que passou a ser 'str', depois atribuiu
+para as variaveis a e b o valor de 1000, em seguida fez alguns testes boleanos que retornou true e true.
 
 3. Declaração e atribuição
 Em C: declarar reserva memória; inicializar coloca valor. São atos separáveis.
@@ -60,6 +65,7 @@ MAX_ITER = 100
 
 from typing import Final
 PI: Final = 3.14159
+
 🔬 Exercício 3 — Reatribuição e contagem de referências
 a = [1, 2, 3]   # lista criada no heap; 'a' aponta para ela
 b = a            # 'b' é outra etiqueta para o MESMO objeto
@@ -70,6 +76,9 @@ b = [9, 9]       # 'b' religar para nova lista; 'a' não muda
 print(a)         # [1, 2, 3, 4]
 print(b)         # [9, 9]
 O que observar: no PythonTutor, a e b aparecem como setas para o mesmo objeto lista após b = a. Após b = [9,9], as setas se separam. Isso é o equivalente de dois ponteiros C apontando para o mesmo bloco heap.
+
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor, observou-se que foi atribuido para a variante a uma lista com os numeros de 1 à 3, em seguida atribuiu que "b" seria igual a "a" em seguida 
+pediu-se para incluir 4 na lista, ao pedir para informar "a" retornou uma lista de 1 à 4, foi atribuido para b uma nova lista com os numeros 9 e 9, agora quando pede para informar a e b retornam lista diferentes. 
 
 4. Operadores
 # Aritméticos
@@ -119,6 +128,10 @@ print(p == q)    # True  — mesmos valores
 print(p is q)    # False — objetos distintos no heap
 O que observar: x += 1 cria um novo objeto int(4) — no PythonTutor, a seta de x muda de destino. Em C, x++ modifica os bytes da caixa no lugar.
 
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor, observou-se que que foram atrubuidos para a e b os valores 17 e 5, depois foi pedido para realizar operações matematicas comas duas variaveis em seguida atribuiu
+para x o numero 3 depois pediu para somar 1 em seguida pediu para informar, estabeleceu o comando para que "maximo" seja igual a "a" se "a" for maior que "b" e se não for "maximo" será igual a b em seguida pede
+para informar maximo. Em seguida pede para atribuirpara as variaveis p e q os mesmos numeros de uma lista e pede para verificar o comporstamentos dos comando == e is sendo que o == retorna true e is retorna false.
+
 5. Controle de fluxo
 Em C: chaves {} delimitam blocos. Em Python: indentação delimita blocos. Não há switch nativo até Python 3.10 (match/case).
 
@@ -154,6 +167,7 @@ for i in range(10):
     if i == 5: break
 else:                     # executado se o laço terminou SEM break
     print("completo")
+
 🔬 Exercício 5a — if/elif/else
 nota = 72
 
@@ -161,6 +175,10 @@ if   nota >= 90: print("A")
 elif nota >= 80: print("B")
 elif nota >= 70: print("C")
 else:            print("Reprovado")
+
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor, observou-se que foi atribuido para a variavel "nota" o valor 72 e informado as seguintes regras se nota for maior igual a 90 retonar "A" 
+se maior igual a 80 retornar "B" se maior igual a 70 retornar "C" e se for diferente dessas outras regras retornar "Rprovado".
+
 🔬 Exercício 5b — for com break, continue e cláusula else
 for i in range(10):
     if i % 2 == 0:
@@ -178,6 +196,9 @@ while n < 32:
     n *= 2
 O que observar: a cláusula else do for — conceito sem equivalente em C.
 
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor, observou-se que foi estabelecido um laço até 10 para retornar apenas numero impar e quando chegar a 7 encerra o laço depois foi estabelecido n igual a 1
+e a regra enqunto n for menor que 32 ficará multiplicado por 2. 
+
 🔬 Exercício 5c — match/case (Python 3.10+)
 dia = 3   # 1=Seg ... 7=Dom
 
@@ -189,6 +210,9 @@ match dia:
     case _:
         print("Inválido")
 ⚠ match não tem fall-through — em C, esquecer break no switch cai para o próximo case. Em Python, isso não acontece.
+
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor, observou-se que foi estabelecido a variavel "dia" igual a 3 e estabeleceu 3 situações se dia estiver entre 1 à 5 é para retornar "dia útil" 
+se for 6 e 7 retorna "Fim de Semana" e se for diferente retorna "Invalido".
 
 6. Funções
 Em C: funções têm tipo de retorno declarado, passagem por valor por padrão, e por referência via ponteiro explícito.
@@ -217,6 +241,7 @@ aplicar(abs, -5)   # 5 — função passada como argumento
 
 # lambda (função anônima)
 quadrado = lambda x: x * x
+
 🔬 Exercício 6a — Passagem por objeto-referência: mutável vs. imutável
 # imutável: int — comportamento parece "por valor" (como C)
 def dobra_int(x):
@@ -235,7 +260,11 @@ def dobra_lista(lst):
 nums = [1, 2, 3]
 dobra_lista(nums)
 print(nums)   # [2, 4, 6] — alterado!
-O que observar: é a mutabilidade do objeto, não a linguagem, que determina se o chamador vê a mudança. Com int (imutável), x *= 2 cria novo objeto — a seta dentro da função muda, mas a seta do chamador não. Com lista (mutável), lst[i] *= 2 modifica o objeto compartilhado.
+O que observar: é a mutabilidade do objeto, não a linguagem, que determina se o chamador vê a mudança. Com int (imutável), x *= 2 cria novo objeto — a seta dentro da função muda, mas a seta do chamador não. 
+Com lista (mutável), lst[i] *= 2 modifica o objeto compartilhado.
+
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor, observou-se que mesmos sem determinar uma variavel é possivel a criação de novos objetos pois na função indicou-se apenas a variavel v igual a 7 que ao retornar
+na função recebeu o comando de dobrar e em seguida retornou 14 mas continuou sendo 7 do mesmo modo aplicou-se para uma lista.
 
 🔬 Exercício 6b — Recursão e pilha de chamadas
 def fatorial(n):
@@ -245,6 +274,9 @@ def fatorial(n):
 
 print(fatorial(5))   # 120
 O que observar: frames de fatorial empilhando exatamente como em C — o PythonTutor mostra cada frame com seu n local.
+
+📌 O QUE FOI FEITO: Comando foi copiado no python tutor, observou-se que foi estabelecido a regra para se n for igual ou menor que 1 vai retornar 1 e que n será multiplicado por n-1 ao estabelecer o fatorial 
+igual a cinco foi decaindo em um até atingir o valor de 1 retornou o a formula até retornar o valor 120.
 
 7. Listas (equivalente de arrays)
 Em C: array tem tamanho fixo, tipo homogêneo, armazenamento contíguo na stack (ou heap se alocado com malloc).
