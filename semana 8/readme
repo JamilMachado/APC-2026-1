@@ -1,0 +1,29 @@
+# Exercícios de Programação com Microdados do PDAD 2024 — Distrito Federal
+
+**Disciplina:** Algoritmos e Programação de Computadores  
+**Dados:** PDAD-A 2024 — Pesquisa Distrital por Amostra de Domicílios Ampliada  
+**Arquivos:** `moradores_parcial.csv` · `domicilios_parcial.xlsx` · `dicionario_de_variaveis_pdad_2024.xlsx`
+
+---
+
+## Parte 1 — Entendendo os dados antes de programar
+
+Antes de escrever uma linha de código, é fundamental entender de onde vêm os dados, como eles estão organizados e o que cada número significa. Esta seção é tão importante quanto os exercícios de programação.
+
+---
+
+### 1.1 — O que é o PDAD?
+
+A **Pesquisa Distrital por Amostra de Domicílios (PDAD)** é realizada pelo **IPEDF** — Instituto de Pesquisa e Estatística do Distrito Federal — com o objetivo de traçar o perfil socioeconômico da população e das moradias do Distrito Federal. A versão de 2024 é chamada de **PDAD-A (Ampliada)** porque, pela primeira vez, incluiu áreas rurais e os 12 municípios da Periferia Metropolitana de Brasília (PMB).
+
+Os microdados e o dicionário de variáveis estão disponíveis publicamente em:
+
+> **https://pdad.ipe.df.gov.br**
+
+Lá você encontra, para download:
+- `PDAD_2024-Domicilios.xlsx` — um registro por domicílio visitado
+- `PDAD_2024-Moradores.csv` — um registro por pessoa entrevistada
+- `Dicionario_de_variaveis_PDAD_2024.xlsx` — descrição de cada coluna
+- O questionário aplicado em campo e o manual do entrevistador
+
+A pesquisa de 2024 visitou cerca de **25 mil domicílios** nas 35 Regiões Administrativas do DF. Os arquivos que usaremos nestes exercícios são amostras parciais desses dados.
